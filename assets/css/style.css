@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  padding-inline: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  
+}
+  
+nav li {
+  list-style-type: none;
+  
+}
+
+nav li a{
+  color: white;
+  text-decoration: none;
+  
+}
+  
+nav {
+  background-color: #2C3333;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+
+nav li:hover{
+  font-weight: bold;
+}
+
+/* Style DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 100px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+}
+
+
+/* batas akhir style DROPDOWN */
+
+main {
+  padding: 15px;
+
+  display: flex;
+  gap: 2rem;
+}
+
+#content {
+  flex: 5;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+aside{
+  flex: 1;
+}
+
+.card {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('../img/gambar_jumbotron.png'); 
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.jumbotron a img{
+  width: 20%;
+}
+
+footer{
+  padding: 10px;
+  color: white;
+  background-color: #2C3333;
+  text-align: center;
+}
+
+.row-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 10rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+
+.profile header {
+  text-align: center;
+}
+
+aside section{
+  text-align: center;
+}
+
+.fa-brands {
+  font-size: 35px; 
+}
+
+.fa-brands:hover {
+  font-size: 45px;
+  
+  color: #980101;
+}
+
+#kernel_function table, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+#gambar_svm{
+  max-width: 500px;
+}
+
+.tabel_rumus{
+  width: 24%;
+  font-family: "STIX Two Text", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#decision_function{
+  max-height: 80px;
+}
+
+.gambar_profile_aside{
+  border-radius: 7px;
+  max-width: 200px;
+}
+
+/* css style untuk SLIDER */
+/* --------------------------- */
+
+.slider_container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imageSlider{
+  max-width: 400px;
+}
+/* Batas style slide */
+
+pre{
+  padding-left: 5px;
+  white-space: pre-line;
+  border: #000;
+  border-style: solid;
+  border-width: thin;
+}
+
+@media screen and (max-width: 1200px){
+  main{
+    flex-flow: column nowrap;
+  }
+
+  nav ul {
+    padding-inline: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  main aside{
+    align-self: center;
+  }
+
+  .row-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 3rem;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  main aside {
+    align-self: stretch;
+  }
+
+  #gambar_svm{
+    max-width: 300px;
+  }
+
+  .row-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  .imageSlider{
+    max-width: 300px;
+  }
+}

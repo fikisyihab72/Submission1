@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Dicoding 1</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font website -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font rumus -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <!-- Javascript untuk DOM -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/94f270216e.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <header>
+        <div class="jumbotron">
+            <h1>Support Vector Machine</h1>
+            <p>Algoritma Machine Learning Berbasis Supervised Learning</p>
+            <p><i>Classification, regression and outliers detection</i></p> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#pengertian">Pengertian</a></li>
+                <li><a href="#sejarah_svm">Sejarah SVM</a></li>
+                <li><a href="#kernel_function">Kernel Function</a></li>
+                <li><a href="#rumus">Rumus</a></li>
+                <li class="dropdown">
+                  <a href="#" onclick="toggleDropdown(event)"><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i> Useful Links</a>
+                  <div class="dropdown-content">
+                    <a href="https://scikit-learn.org/stable/modules/svm.html">Scikit-learn SVM</a>
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR">Regression</a>
+                    <a href="https://scikit-learn.org/stable/modules/outlier_detection.html">Outliers Detection</a>
+                  </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="content">
+            <article id="pengertian" class="card">
+              <section>
+                <h1>Apa itu Support Vector Machine?</h1>
+                <p>
+                    Support Vector Machine atau biasa disingkat dengan SVM ini adalah metode machine learning yang bekerja dengan cara
+                    supervised learning untuk menyelesaikan tugas klasifikasi atau regresi. Dalam konteks pemodelan klasifikasi, SVM dianggap metode
+                    yang lebih matang dibandingkan dengan metode-metode klasifikasi lainnya yang sudah ada. SVM memiliki kemampuan untuk mengatasi 
+                    masalah linear ataupun non-linear dengan memanfaatkan kernel trick.
+                </p>
+              </section>
+              <section>
+                <h1>Kelebihan dari Support Vector Machine adalah:</h1>
+                <ul>
+                    <li>Efektif di ruang berdimensi tinggi.</li>
+                    <li>Masih efektif jika jumlah dimensi lebih besar dari jumlah sampel.</li>
+                    <li>Menggunakan subset titik pelatihan dalam fungsi keputusan (disebut support vector), sehingga juga hemat memori.</li>
+                    <li>Serbaguna: fungsi Kernel yang berbeda dapat ditentukan untuk fungsi keputusan.</li>
+                </ul>
+              </section>
+            </article>
+
+            <article id="sejarah_svm" class="card">
+              <section>
+                <h1>Sejarah Support Vector Machine</h1>
+                <p>Pada tahun 1960an Vapnik memperkenalkan algoritma Support Vector Machine
+                    (SVM) untuk menyelesaikan tugas klasifikasi. SVM merupakan algoritma yang dapat
+                    digunakan untuk mempelajari regresi dan klasifikasi <cite><a href="https://www.semanticscholar.org/paper/An-introduction-to-support-vector-machines-for-data-Burbidge-Buxton/5e5b57823d92a97ebc9af989b4633388e85d75e8">(Burbidge & Buxton, 2001)</a></cite>. SVM
+                    bekerja dengan cara mengamati fitur pada data untuk melakukan pemisahan kelas yang
+                    didapatkan dari mempelajari pola informasi pada data. Pemisahan tersebut disebut dengan
+                    “hyperplane” <cite><a href="https://www.researchgate.net/publication/338315621_Support_vector_machine">(Pisner & Schnyer, 2019)</a></cite>. Jika hyperplane telah ditemukan, maka dapat
+                    digunakan untuk mengklasifikasikan data baru pada label yang memungkinkan. SVM
+                    termasuk dalam jenis supervised learning yang membuat model dari data untuk kemudian
+                    dilakukan pemisahan ke dalam kelas-kelas tertentu <cite><a href="https://www.sciencedirect.com/science/article/abs/pii/S0925231220307153">(Cervantes et al., 2020)</a></cite>. Oleh karena itu,
+                    dalam pembuatan model SVM pada saat tahap pelatihan model mempelajari data latih yang
+                    sebelumnya telah diberi label.
+                </p>
+              </section>
+                <section>
+                  <h1>Kegunaan utama Support Vector Machine</h1>
+                    <h4>Classification</h4>
+                    <p>
+                      Klasifikasi dalam SVM bekerja dengan cara plotting data sebagai "poin" di dalam ruang n-dimension. Tujuannya adalah untuk mencari hyperplane paling optimal
+                      yang dapat membagi data poin kedalam kelas masing masing dengan tetap mencari margin terbesar antara hyperplane dan data poin terdekat untuk setiap kelas.
+                    </p>
+                    <h4>Regression</h4>
+                    <p>
+                      Berbeda dengan klasifikasi, regresi dala SVM bekerja dengan cara mencari hyperplane terbaik untuk mengatasi masalah data poin dalam ruang kontinu. Tugas regresi
+                      dalam SVR diraih dengan memetakan data input kedalam ruang yang berdimensi lebih tinggi untuk mencari hyperplane terbaik. Hyperplane terbaik dalam regresi didapatkan
+                      dengan memperhatikan margin maksimal dan minimal kesalahan prediksi.
+                    </p>
+                    <h4>Outliers Detection</h4>
+                    <p>
+                      SVM juga dapat digunakan untuk mendeteksi outlier. Outlier adalah data pencilan yang bersifat berbeda dengan kumpulan data lainnya yang biasanya berada pada titik data
+                      yang jauh dengan mayoritas. Beberapa pendekatan SVM untuk deteksi outlier adalah berbasis margin, one-class SVM, kernel trick, metode density based.
+                    </p>
+                </section>
+            </article>
+
+            <article id="kernel_function" class="card">
+                <h2>Contoh Kernel SVM</h2>
+                <table>
+                    <tr>
+                        <th>Nama</th>
+                        <td>Pengertian</td>
+                        <td>Rumus</td>
+                    </tr>
+                    <tr>
+                      <th>Linear</th>
+                      <td>Linear kernel adalah kernel yang paling sederhana dan digunakan untuk
+                        menyelesaikan masalah linear. Kernel ini tidak memiliki parameter apapun dan
+                        digunakan untuk mengerjakan kasus berdimensi rendah sebagai contoh adalah kasus
+                        yang hanya terdapat dua kelas
+                      </td>
+                      <td class="tabel_rumus">K(x, x<sub>i</sub>) = (x.x<sub>i</sub>)</td>
+                    </tr>
+                    <tr>
+                      <th>Polynomial</th>
+                      <td>Kernel ini memiliki tiga parameter yaitu 𝛾, 𝑐𝑜𝑒𝑓, dan 𝑑. Parameter 𝛾 secara default
+                        adalah 1/𝑘 dimana 𝑘 adalah jumlah kelas, parameter 𝑐𝑜𝑒𝑓 secara default memiliki
+                        nilai 0, dan parameter 𝑑 merupakan polynomial degree secara default memiliki nilai 3
+                      </td>
+                      <td class="tabel_rumus">K(x, x<sub>i</sub>) = [y * (x.x<sub>i</sub>) + coef]<sup>d</sup></td>
+                    </tr>
+                    <tr>
+                      <th>RBF</th>
+                      <td>RBF SVM bekerja dengan memetakan data masukan ke dalam ruang fitur berdimensi lebih tinggi, 
+                        di mana kelas-kelas dapat dipisahkan oleh hyperplane. Algoritme ini menggunakan fungsi kernel, 
+                        seperti Radial Basis Function, untuk mengukur kemiripan antara pasangan titik data dalam ruang fitur.</td>
+                      <td class="tabel_rumus">K(x, x<sub>i</sub>) = exp(-y * ||x - x<sub>i</sub>||<sup>2</sup> + C)</td>
+                    </tr>
+                    <tr>
+                      <th>Sigmoid</th>
+                      <td>Sigmoid kernel memiliki karakteristik yaitu harus mencapai kondisi tertentu dalam
+                        penerapannya sehingga jarang digunakan. Sigmoid kernel lebih sering dipakai dalam
+                        jaringan syaraf tiruan (neural network). Kernel ini terdiri dari dua parameter yaitu 𝛾
+                        dan 𝑐𝑜𝑒𝑓. Parameter 𝛾 memiliki nilai default 1/𝑘 dimana nilai k adalah jumlah kelas
+                        dan parameter 𝑐𝑜𝑒𝑓 memiliki nilai default yaitu 0.</td>
+                      <td class="tabel_rumus">K(x, x<sub>i</sub>) = tanh(y(x.x<sub>i</sub>) + coef)</td>
+                    </tr>
+                  </table>
+            </article>
+
+            <article id="rumus" class="card">
+              <section>
+                <h2>Optimization Problem</h2>              
+                <p>
+                    Dalam algoritma <i>Support Vector Machine</i>, <i>Optimization Problem</i> adalah suatu masalah untuk
+                    mencari garis <b><i>hyperplane</i></b> maksimal yang dapat memisahkan kelas positif dan negatif. Jika garis 
+                    maksimum telah ditemukan, maka disebut dengan <i>maximum margin hyperplane</i>.
+                </p>
+                <img src="assets/img/optimization problem.png" alt="gambar_svm" id="gambar_svm">
+                <p>
+                    Dalam proses pencarian <b><i>hyperplane</i></b>, SVM akan mencari sampel data yang paling dekat dengan <i>decision boundary</i> 
+                    (garis imajiner yang membagi <i>input space</i> menjadi kelas berbeda), data sample tersebut disebut dengan <i>support vector</i>.
+                    <i>Support vector</i> ini menjadi digunakan untuk menentukan <b><i>hyperplane</i></b>. <i>Margin</i> merupakan jarak antara garis <i>hyperplane</i> dengan 
+                    <i>support vector</i> terdekat. Tujuan dari <i>optimization problem</i> adalah untuk memaksimalkan <i>Margin</i> dan membuat <b><i>hyperplane</i></b> sejauh mungkin
+                    dengan <i>support vector</i>.
+                </p>
+              </section>
+              <section>
+                <h2>Decision Function</h2>
+                <p>
+                    Setelah <i>optimmization problem </i>diselesaikan, penentuan kelas dapat dilakukan dengan menggunakan <b><i>Decision Function</i></b> berikut: 
+                </p>
+                <img src="assets/img/decision function.png" alt="decision_function" id="decision_function">
+              </section>
+            </article>
+
+            <article id="slide_gambar" class="card">
+                <h2>Contoh Visualisasi Data dengan Kernel Berbeda</h2>
+                <div class="slider_container">
+                  <img class="imageSlider" src="assets/img/image01.png" >
+                  <img class="imageSlider" src="assets/img/image02.png" >
+                  <img class="imageSlider" src="assets/img/image03.png" >
+                  <div>
+                    <button onclick="tommbolSlide(-1)">&#10094; Prev</button>
+                    <button onclick="tommbolSlide(1)">Next &#10095;</button>
+                  </div>
+                </div>
+              </article>
+
+              <article id="svm_dengan_python" class="card">
+                <h2>Contoh kode SVM bahasa Python dengan dataset Iris</h2>
+                <h3>Import library yang dibutuhkan</h3>
+                <pre>
+                  <code>
+                    import numpy as np
+                    import pandas as pd
+                    from sklearn import svm
+                    from sklearn.model_selection import train_test_split
+                    from sklearn.metrics import accuracy_score
+                    from sklearn.preprocessing import StandardScaler
+                  </code>
+                </pre>
+
+                <h3>Memuat dataset, pada contoh ini pakai iris.csv</h3>
+                <pre>
+                  <code>
+                    dataset_iris = pd.read_csv('iris.csv')
+
+                    # Membagi dataset menjaddi label dan fitur
+                    X = dataset_iris.iloc[:, :-1]
+                    y = dataset_iris.iloc[:, -1]
+                    
+                    # Tahap preprocess dengan standarscaler
+                    scaled_dataset = StandardScaler()
+                    X = scaled_dataset.fit_transform(X)
+                  </code>
+                </pre>
+
+                <h3>Bagi dataset menjadi data train dan data test 70% dan 30%</h3>
+                <pre>
+                  <code>
+                    # Melakukan train-test-split pada dataset
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+                  </code>
+                </pre>
+
+                <h3>Membangun model SVM dengan kernel polynomial</h3>
+                <pre>
+                  <code>
+                    # Membuat Model SVM dengan kernel polynomial
+                    model_svm = svm.SVC(kernel='poly')
+                    model_svm.fit(X_train, y_train)
+                  </code>
+                </pre>
+
+                <h3>Testing model SVM yang telah dibuat dengan data test</h3>
+                <pre>
+                  <code>
+                    # Melakukan prediksi untuk untuk ditest performanya
+                    y_pred = model_svm.predict(X_test)
+                  </code>
+                </pre>
+
+                <h3>Evaluasi model SVM dengan metric akurasi</h3>
+                <pre>
+                  <code>
+                    # Evaluasi performa model SVM
+                    akurasi = accuracy_score(y_test, y_pred)
+                    print('Akurasi:', akurasi)
+                  </code>
+                </pre>
+
+              </article>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Tentang saya:</h2>
+                    <figure>
+                        <img src="assets/img/profile.jpg" alt="foto_profile" class="gambar_profile_aside">
+                    </figure>
+                    <h3>Fiki Syihab Irawan</h3>
+                    <p>Informatika</p>
+                    <p>UPN "Veteran" Yogyakarta</p>
+                </header>
+                <section class="ikon_social_media">
+                  <h2>Media Sosial saya:</h2>
+                    <a href="https://www.instagram.com/fiki.xihab"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/fiki-syihab-irawan-7950b7180/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/fikisyihab72"><i class="fa-brands fa-square-github"></i></a>
+                </section>
+            </article>
+        </aside>
+    </main>
+    
+    <footer>
+      <div class="footer-contact">
+        <div class="row-footer">
+          <div id="col1">
+            <div class="footer-icon"><i class="fa-solid fa-map-location-dot" style="color: #ffffff;"></i></div>
+            <div>Jl. Muraibatu 11, Gedung Cendana</div>
+          </div>
+          <div id="col2">
+            <div class="footer-icon"><i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i></div>
+            <div>+6281 8789 xxx</div>
+          </div>
+          <div id="col3">
+            <div class="footer-icon"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></div>
+            <div>emailkantorpusat202@company.org</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
