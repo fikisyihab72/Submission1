@@ -23,7 +23,6 @@ Beberapa html tag yang digunakan untuk membangun web
 Menggunakan font "Roboto" untuk keseluruhan web dan menggunakan font "STIX two text" untuk bagian snipset code Python
 
 Screenshot:
-![1](https://github.com/user-attachments/assets/ef86c35e-148d-4ee9-a3ca-84811e5cb3eb)
-![2](https://github.com/user-attachments/assets/d6991441-e096-4417-8df2-075f8ec27b7b)
-![3](https://github.com/user-attachments/assets/0ad03313-f70a-4f4b-ad7a-8d2988142c58)
+![capture11111](https://github.com/user-attachments/assets/fa97f7ee-cf75-4646-8843-15f53cab3f04)
+
 
